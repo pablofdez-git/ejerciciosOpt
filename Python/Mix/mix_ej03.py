@@ -3,4 +3,5 @@
 
 numHoras = int(input("Introduce el numero de horas trabajadas: "))
 costeHora = int(input("Introduce el coste por hora: "))
-print("Tu paga es de:",numHoras*costeHora,"€")
+paga = numHoras*costeHora
+print("Tu paga es de:",paga,"€")
