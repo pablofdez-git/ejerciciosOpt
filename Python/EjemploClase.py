@@ -328,3 +328,47 @@ if condicion > 10:
         print("El numero es mayor que 10 e impar")
 else:
     print("El numero es menor o igual que 10")
+
+#/ BUCLES
+
+## While - Se ejecuta mientras la condicion sea verdadera
+#while True:
+#    print("Bucle infinito")
+
+condicion = 0
+while condicion < 10:
+    print(condicion)
+    condicion += 1                      #$ Mofidificar la condicion para que tienda al valor de salida
+
+# While + else - Se ejecuta el bloque else cuando la condicion deja de cumplirse
+condicion = 0
+while condicion < 10:
+    print(condicion)
+    condicion += 1
+else:
+    print("La condicion ya no se cumple")
+
+#? Break: Permite forzar la salida del bucle
+condicion = 0
+while condicion < 10:
+    print(condicion)
+    condicion += 1
+    if condicion == 5:
+        break
+
+condicion = 0
+while condicion < 10:
+    print(condicion)
+    condicion += 1
+    if condicion == 5:
+        break
+else:
+    print("La condicion ya no se cumple")      #$ No se ejecuta porque el bucle se ha interrumpido con break
+
+#? Continue: Permite saltar a la siguiente iteracion del bucle
+condicion = 0
+while condicion < 10:
+    condicion += 1
+    if condicion == 5:
+        continue
+    print(condicion)
