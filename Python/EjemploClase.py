@@ -273,3 +273,58 @@ print(resultado)
 
 frase = "Hola mundo"
 print(frase.startswith("Hola"))       #$ Resultado: True -> Comprueba si empieza por "Hola"
+
+
+#/ CONDICIONALES
+
+## Condicional if
+condicion = True
+if condicion:
+    print("Se ejecuta el if")
+
+print("Fuera del if")
+
+valor = 2 * 10
+if valor:
+    print("Se ejecuta el if")       #$ Cuando una codicion tiene valor se ejecuta el if porque se entiende como true
+
+valor = None
+if valor:
+    print("Se ejecuta el if")       #$ Cuando una condicion es una variable sin valor se entiende que es false
+
+## Condicional if-else
+if condicion:
+    print("Se entro en el if")
+else:
+    print("Se entro en el else")
+
+## Condicional if-elif - Permite verificar varias condiciones mutuamente excluyentes entre si
+condicion = 10
+if (condicion <= 5):
+    print("la condicion es menor o igual a 5")
+elif (condicion > 5 and condicion <=50):
+    print("La condicion es mayor que 5 y menor o igual que 50")
+else:
+    print("La condicion es mayor a 50")
+
+## Algunos ejemplos con cadenas
+cadena = ""
+if cadena:
+    print("La cadena no esta vacia")        #$ Cadena vacia como condicion se considera false - cualquier otra true
+
+otra_cadena  = "hola"
+if otra_cadena == "hola":                   #$ Compara cadenas caracter a caracter
+    print("Las cadenas son iguales")
+
+if not (otra_cadena == "hola"):                   #$ Con not se niega la condicion
+    print("Las cadenas no son iguales")
+
+## Anidar condicionales - cuidado con las indentaciones
+condicion = 57
+if condicion > 10:
+    if condicion % 2 == 0:
+        print("El numero es mayor que 10 y par")
+    elif condicion % 2 != 0:
+        print("El numero es mayor que 10 e impar")
+else:
+    print("El numero es menor o igual que 10")

@@ -4,5 +4,5 @@
 
 peso = int(input("Introduce tu peso en kg: "))
 estatura = float(input("Introduce tu estatura en metros: "))
-imc = (peso /(estatura**2))
-print("Tu indice de masa corportal es",round(imc,2))
+imc = round((peso /(estatura**2)),2)
+print("Tu indice de masa corportal es",imc)
