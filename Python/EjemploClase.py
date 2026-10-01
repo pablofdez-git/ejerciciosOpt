@@ -340,7 +340,7 @@ while condicion < 10:
     print(condicion)
     condicion += 1                      #$ Mofidificar la condicion para que tienda al valor de salida
 
-# While + else - Se ejecuta el bloque else cuando la condicion deja de cumplirse
+#? While + else - Se ejecuta el bloque else cuando la condicion deja de cumplirse
 condicion = 0
 while condicion < 10:
     print(condicion)
@@ -372,3 +372,40 @@ while condicion < 10:
     if condicion == 5:
         continue
     print(condicion)
+
+## For - Permite iterar sobre una secuencia de elementos - Similar a foreach de java (se utiliza para recorrer estructuras iterables)
+cadena  = "Aprender Python"
+for letra in cadena:
+    print(letra)
+
+#? Para forzar la detencion del bucle es necesario if+break
+cadena  = "Aprender Python"
+for letra in cadena:
+    print(letra)
+    if letra == "P":
+        break
+
+#? Funcion range() - Permite generar una secuencias a recorrer
+# Sintaxis de range es: range(inicio, fin, paso) -> inicio incluido, fin excluido
+for i in range(10):                     #$ Con un solo parametro marcamos el fin
+    print(cadena[i])
+
+for i in range(3,8):                    #$ Con dos parametros marcamos el inicio y el fin
+    print(cadena[i])
+
+for i in range(0, len(cadena), 2):          #$ Con tres parametros marcamos el inicio, el fin y el paso
+    print(cadena[i])
+
+#? Bucle for para recorrer ens entido inverso usando range()
+for i in range(len(cadena)-1, -1, -1):
+    print(cadena[i])
+
+#? Pass: esta instruccion no hace nada, es un marcador de posicion que se usa para indicar que se incluira algo en ese lugar posteriormente. Evita errores de sintaxis en ausencia de llaves
+for i in range(5):
+    pass
+
+#? Se pueden anidar bucles. Bucle externo + bucle interno
+for i in range(1,3):
+    for j in range(1,4):
+        print(f"{i} x {j} = {i*j}")
+    print("-----")
