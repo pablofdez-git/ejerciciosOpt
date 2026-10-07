@@ -7,4 +7,5 @@
 #!    *****
 
 numero = int(input("Introduce un número entero: "))
-# for i in range(1, numero + 1):
+for i in range(numero):
+    print("*" * i)

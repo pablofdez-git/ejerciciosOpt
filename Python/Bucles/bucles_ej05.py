@@ -5,6 +5,6 @@ cantidad = float(input("Introduce la cantidad a invertir: "))
 interes = float(input("Introduce el interés anual (en porcentaje): "))
 num_anios = int(input("Introduce el número de años: "))
 
-for i in range(1, num_anios +1):
+for i in range(num_anios):
     cantidad = cantidad + (cantidad / interes * 100)
-    print(f"Capital obtenido al final del año {i}: {cantidad:.2f}")
+    print(f"Capital obtenido al final del año {i+1}: {cantidad:.2f}")
