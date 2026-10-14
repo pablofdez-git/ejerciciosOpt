@@ -3,4 +3,4 @@
 asignaturas = ["Matemáticas", "Física", "Química", "Historia", "Lengua"]
 print("Las asignaturas del curso son: ")
 for i in asignaturas:
-    print(i)
+    print(i, end=", ")

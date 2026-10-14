@@ -8,5 +8,4 @@ for i in asignaturas:
     nota = float(input(f"Introduce la nota de {i}: "))
     if nota >= 5:
         asignaturas.remove(i)
-
 print(f"Asignaturas que tienes que repetir: ", asignaturas)

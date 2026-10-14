@@ -3,7 +3,6 @@
 #!    y muestre por pantalla la lista resultante.
 
 abecedario = list("abcdefghijklmnñopqrstuvwxyz")
-
 for i in range (len(abecedario)):
     if i % 3 == 0:
         abecedario[i] = ""
