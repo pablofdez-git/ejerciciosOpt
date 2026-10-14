@@ -566,3 +566,70 @@ print(lista_frutas_orden_inverso)
 #? Cortar elementos de una lista -> slice
 lista_trozo = lista_frutas[2:5]
 print(lista_trozo)
+
+#/ TUPLAS
+
+#? Crear tupla
+tupla_uno = ()
+tupla_dos = tuple()
+
+#? Añadir valores a una tupla
+tupla_palabra = tuple("abcdef")
+print(tupla_palabra)
+tupla_persona = ("Pedro","Perez", 1.60, 12)
+print(tupla_persona)
+
+#? Acceso a los elementos de una tupla por indice (=listas)
+nombre = tupla_persona[0]
+print(nombre)
+edad = tupla_persona[-1]
+print(edad)
+
+#? Conocer el numero de elemetos que forman una tupla (=listas)
+print(len(tupla_persona))
+
+#? Conocer el numero de apariciones de un elemento en una tupla (=listas)
+tupla_numeros = (1,2,3,4,5,6,7,8,9,1,2)
+cantidad_tres = tupla_numeros.count(3)
+print(cantidad_tres)
+
+#? Conocer el indice en el que se encuntra un valor (=listas)
+#! SI EL VALOR NO APARECE DEVUELVE UN ERROR
+print(tupla_numeros.index(3))
+
+#? Intento de modificar los datos de una tupla
+tupla_persona[0] = "Mario"
+print(tupla_persona)                                    #$ ERROR
+
+#? Intento de eliminar un valor de una tupla
+del tupla_persona[1]                                    #$ ERROR
+
+#? Concatenar tuplas
+tupla_frutas = ("Manzanas","Peras","Melones")
+tupla_unida = tupla_numeros + tupla_frutas
+print(tupla_unida)
+
+tupla_frutas.extends(tupla_numeros)                     #$ ERROR porque se intenta modificar una tupla
+
+#? Comprobar la pertenencia a una tupla
+print("Peras" in tupla_frutas)                          #$ TRUE
+print("Macarrones" in tupla_frutas)                     #$ FALSE
+
+#? Slide de tuplas (=listas y cadenas)
+print(tupla_numeros[2:6:2])     # [inicio:fin:paso] -> inicio incluido / fin sin incluir
+
+#? Copiar una lista a una tupla => se usa para hacer mutable una tupla
+lista = list(tupla_numeros)
+print(type(lista))
+print(lista)
+lista[2] = 27
+print(lista)
+
+#? Pasar una lista a una tupla
+tupla_numero = tuple(lista)
+print(tupla_numeros)
+
+#? Eliminacion de tuplas
+tupla_frutas.clear()                                    #$ Eliminar los elementos dejando la tupla se considera mutarla
+del tupla_frutas
+del tupla_frutas                                        #$ OK: Eliminar la tupla completa
