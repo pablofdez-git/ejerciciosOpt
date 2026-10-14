@@ -409,3 +409,160 @@ for i in range(1,3):
     for j in range(1,4):
         print(f"{i} x {j} = {i*j}")
     print("-----")
+
+#/ LISTAS
+
+## Coleccion de distintos tipos de datos ORDENADA y MUTABLE. admite repetidos
+## en una lista puede haber elementos del mismo tipo o de distintos tipos
+## Existen funciones incorporadas en el lenguaje para trabajar con listas
+
+#? Crear una lista
+lista_uno = []
+lista_dos = list()
+
+print(lista_uno)
+print(lista_dos)
+
+#? Añadir elementos a una lista
+lista_frutas = ["Manzana", "Pera", "Sandia", "Melon"]
+print(lista_frutas)
+lista_frutas = list(("Manzana", "Pera", "Sandia", "Melon"))
+print(lista_frutas)
+
+#? Conocer el numero de elementos que hay en una lista -> len()
+print(len(lista_frutas))
+
+#? Se pueden añadir elementos de diferente tipo a una lista
+lista_personas = ["Pablo", "Fernandez", 1.82, 21]
+print(type(lista_personas))
+
+#? Desempaquetar elementos de la lista (No es recomendable)
+nombre, apellido, altura, edad = lista_personas
+print(apellido)
+
+nombre, apellido = lista_personas                                       #$ ERROR - porque hay distinto numero de variables que de elementos en la lista
+
+#? Para desempaquetar solo algunos valores se puede hacer accedientdo por indice
+nombre, estatura = lista_personas[0], lista_personas[2]
+print(nombre)
+print(estatura)
+
+#? Agrupar elementos a la hora de desempaquetarlos (*) - SOLO PUEDE USARSE UNA VEZ
+#? (*) toma todos los elementos
+lista_numeros = [1,2,3,4,5,6,7,8,9]
+primero, segundo, *resto, anteultimo, ultimo = lista_numeros
+print(primero)
+print(segundo)
+print(resto)
+print(anteultimo)
+print(ultimo)
+
+#? Acceder a los elementos de una lista por indice
+print(lista_frutas[1])
+print(lista_frutas[-1])
+print(lista_frutas[8])                                                  #$ ERROR
+
+#? Modificar el valor de un elemento
+lista_personas[3] = 32
+print(lista_personas)
+
+#? Comprobar la pertenencia de un elemento a una lista -> in (boolean)
+esta_presente = "Pera" in lista_frutas
+print(esta_presente)
+
+#? Conocer el numero de apariciones de un elemento en un lista -> count()
+lista_numeros = [1,2,3,4,5,6,7,8,1,6]
+print(lista_numeros.count(1))
+
+#? Conocer en que indice se encuentra un determinado valor -> index()
+#? Si el elemento aparece mas de una vez devuelve el indice de la primera ocurrencia
+print(lista_numeros.index(3))
+print(lista_numeros.index(85))
+
+#? Pasar a lista cualquier estructura iterable
+lista_cadena = list("Hola, buenos dias")
+print(lista_cadena)
+
+#? Concatenar dos listas
+#? Usando el operador (+) - asigna la concatenacion a otra lista, sin modificar las listas originales
+lista_frutas_A = ["Manzana", "Pera", "Sandia", "Melon"]
+lista_frutas_B = ["Fresa", "Cereza", "Mango"]
+lista_concatenada = lista_frutas_A + lista_frutas_B
+print(lista_concatenada)
+
+#? Usando la funcion extend() - la lista invocante pasa a tener sus elementos y los de la lista invocada
+lista_frutas_A.extend(lista_frutas_B)
+print(lista_frutas_A)
+
+#? Añadir elementos a la lista
+#? Añadir un elemento al final de la lista -> append()
+lista_concatenada.append("Kiwi")
+print(lista_concatenada)
+
+#? Añadir un elemento en una posicion concreta -> insert()
+lista_concatenada.insert(2, "Coco")
+print(lista_concatenada)
+
+#? Eliminar elementos de una lista
+#? Eliminar un elemento de la lista por valor -> remove()
+#? Si esta repetido elimina la primera ocurrencia
+lista_concatenada.remove("Coco")
+print(lista_concatenada)
+lista_concatenada.remove("Coco")          #$ ERROR - No existe el elemento en la lista
+
+#? Eliminar un elemento de la lista por indice -> pop() => ESta funcion devuelve el valor del elemento eliminado
+#? Si no se indica el indice elimina el ultimo elemento
+#? El comportamiento sin indice es muy utilizaqdo para desapilar elementos de una lista y trabajar con ellos
+lista_concatenada.pop(2)
+print(lista_concatenada)
+
+#? Eliminar elementos por su indice. SIN DEVOLVER NADA - del
+del lista_concatenada[2]
+print(lista_concatenada)
+
+#? Eliminar una lista completa -> del
+del lista_concatenada
+print(lista_concatenada)                 #$ ERROR - la lista ya no existe
+
+#? Dejar la lista vacia -> clear()
+lista_frutas_A.clear()
+print(lista_frutas_A)
+
+#? Copiar una lista creando una nueva -> copy()
+lista_nums = [1,2,3,4,5]
+lista_otra = lista_nums.copy()
+print(lista_nums)
+print(lista_otra)
+
+lista_otra.pop()
+print(lista_nums)
+print(lista_otra)
+
+#? Dar la vuelta a una lista (el indice 0 pasa a ser el ultimo y el ultimo pasa a ser el 0) -> reverse()
+lista_nums.reverse()
+print(lista_nums)
+
+#? Ordenar los elementos de una lista -> sort()
+#? Si no se indica ordena por criterio de ordenacion natural (alfabetico o numerico)
+lista_frutas = ["Manzana", "Pera", "Sandia", "Melon", "Fresa", "Cereza", "Mango"]
+lista_frutas.sort()
+print(lista_frutas)
+
+#? Si se indica otro criterio se modifica la ordenacion natural
+lista_frutas.sort(reverse=True)
+print(lista_frutas)
+
+#? Ordena una lista sin modificar la lista original (copiando a otra lista) -> sorted()
+lista_frutas = ["Manzana", "Pera", "Sandia", "Melon", "Fresa", "Cereza", "Mango"]
+lista_frutas_ordenada = sorted(lista_frutas)
+print(lista_frutas)
+print(lista_frutas_ordenada)
+
+#? Se puede añadir un criterio de ordenacion distinto al natural
+lista_frutas_orden_inverso = sorted(lista_frutas, reverse=True)
+print(lista_frutas)
+print(lista_frutas_orden_inverso)
+
+#? Cortar elementos de una lista -> slice
+lista_trozo = lista_frutas[2:5]
+print(lista_trozo)
